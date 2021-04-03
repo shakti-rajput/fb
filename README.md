@@ -13,6 +13,8 @@
 
 *python manage.py createsuperuser*
 
+*python manage.py startapp Users*
+
 *python manage.py sqlmigrate blog 0001*
 
 <mark>author = models.ForeignKey(User, on_delete=models.CASCADE)</mark>
