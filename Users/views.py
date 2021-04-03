@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm
+
+
 # Create your views here.
 
 
@@ -19,3 +21,7 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'Users/register.html', {'form': form})
+
+
+def profile(request):
+    return render(request, 'Users/profile.html')
