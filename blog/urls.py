@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from . import views
+from .views import PostListView
 
 urlpatterns = [
-    url(r'^$', views.home, name='blog-home'),
+    url(r'^$', PostListView.as_view(), name='blog-home'),
     url('about/', views.about, name='blog-about'),
 ]
