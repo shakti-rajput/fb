@@ -61,7 +61,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super(PostCreateView, self).form_valid(form)
 
     def get_success_url(self):
-        # self.
         return reverse('blog-home')
 
 
@@ -72,6 +71,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(PostUpdateView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('blog-home')
 
     def test_func(self):
         post = self.get_object()
