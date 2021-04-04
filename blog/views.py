@@ -73,6 +73,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super(PostUpdateView, self).form_valid(form)
 
     def get_success_url(self):
+        # return reverse('post-detail', kwargs={'pk': self.id})
         return reverse('blog-home')
 
     def test_func(self):
